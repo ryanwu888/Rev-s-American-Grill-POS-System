@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "url-loader": "^4.1.1",
+    "@types/node": "^20.12.7"
+  },
+  "dependencies": {
+    "react": "^18.3.1"
+  }
+}
