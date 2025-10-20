@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text-color: #f2e7fd;
+  --background-color: #1B0D0D;
+  --primary-color: #DA9999;
+  --secondary-color: #7D2020;
+  --accent-color: #460606;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+@layer utilities {
+  .text-balance {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Add this for your dropdown menu */
+  .dropdown-menu {
+    display: none;
+  }
+
+  /* Show the dropdown when its parent button is focused or hovered */
+  .dropdown-button:focus+.dropdown-menu,
+  .dropdown-button:hover+.dropdown-menu,
+  .dropdown-menu:hover {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.scroll-container {
+  height: 100vh;
+}
+
+.carousel-primary,
+
+.carousel-secondary {
+  top: 26%;
+  left: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.carousel-primary img {
+  width: 100%;
+  margin-left: 20px;
+  border-radius: 14px;
+}
+
+.carousel-primary {
+  display: flex;
+  justify-content: space-around;
+  animation: scroll-horizontal 20s linear infinite;
+}
+
+.carousel-secondary {
+  animation: scroll-horizontal 20s linear infinite;
+  animation-delay: 10s;
+}
+
+
+@keyframes scroll-horizontal {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: -100%;
+  }
+}
+
+.carousel-primary:hover,
+
+.carousel-primary:hover~.carousel-secondary {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.carousel-secondary:hover {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.scroll-container:hover>.carousel-primary:not(:hover) {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
